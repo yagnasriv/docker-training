@@ -4,4 +4,4 @@
 FROM httpd:latest
 
 # Copy a custom 'index.html' into the Apache server's root directory for hosting
-COPY .docker-image01/index.html /usr/local/apache2/htdocs/
+COPY ./docker-image01/index.html /usr/local/apache2/htdocs/
