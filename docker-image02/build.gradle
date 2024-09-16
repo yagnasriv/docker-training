@@ -1,0 +1,13 @@
+plugins {
+    id 'com.palantir.docker' version '0.22.1'
+}
+
+docker {
+    name "${project.group}/${project.name}:${project.version}"
+    files tasks.jar.archiveFile
+    buildArgs(['JAR_FILE': tasks.jar.archiveFile.get().asFile.name])
+}
+
+task buildDocker(type: Docker) {
+    dependsOn build
+}
